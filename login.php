@@ -45,15 +45,15 @@ if ( isset( $_POST['email'] ) ) {
 }
 $a0="active";
 $r0="&raquo;";
-$site_color = "red darken-4";
-$site_color_text = "red-text text-darken-4";
-$site_color_html = "#b71c1c";
+$site_color = "light-green";
+$site_color_text = "light-green-text";
+$site_color_html = "#8bc34a";
 $site_title = "Login";
 include( "inc/header.inc.php" );
 ?>
 <div class="row">
     <form action="login.php" method="post" class="col s12">
-        <h1 class="<?php echo $site_color_accent_text; ?>">Login</h1>
+        <h1 class="<?php echo $site_color_text; ?>">Login</h1>
 
 		<?php
 		if ( isset( $error_msg ) && ! empty( $error_msg ) ) {
@@ -84,7 +84,7 @@ include( "inc/header.inc.php" );
             </p>
 
 
-            <button class="<?php echo $site_color_accent; ?> btn waves-effect waves-light col s12 m6 l3" type="submit"
+            <button class="<?= $site_color ?> btn waves-effect waves-light col s12 m6 l3" type="submit"
                     name="action">Login
                 <i class="material-icons right">send</i>
             </button>

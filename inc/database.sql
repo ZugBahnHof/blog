@@ -1,4 +1,4 @@
--- 1. Eine Datenbank anlegen, welche mit latin1_german1_ci kollatiert ist!
+-- 1. Eine Datenbank namens anlegen, welche mit utf8_general_ci kollatiert ist!
 -- 2. Folgende Codeblöcke nacheinander in dieser Datenbank ausführen
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -22,23 +22,3 @@ CREATE TABLE `securitytokens` (
   `securitytoken` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-
-CREATE TABLE `money` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `change` int(10) NOT NULL,
-  `sum` int(10) NOT NULL,
-  `updated_by` int(10) unsigned NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;
-
-
-CREATE TABLE IF NOT EXISTS `articles` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE latin1_german1_ci NOT NULL,
-  `description` varchar(255) COLLATE latin1_german1_ci NOT NULL,
-  `barcode` int(10) unsigned NOT NULL,
-  `price` double NOT NULL,
-  `quantity` int(10) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`), UNIQUE (`barcode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci;

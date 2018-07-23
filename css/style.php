@@ -4,19 +4,22 @@ $color1 = $_SESSION['color1'];
 $color_tab_active_bg = $site_color_html;
 header("Content-type: text/css");
 ?>
-.tab a.active {
+.tab_head a.active {
   color:rgb(252, 234, 37)!important;
   background-color: <?=$color1?>!important;
 }
-.tabs .tab a:hover {
-  background-color: #bcaaa4!important;
+.tabs_head .tab a:hover {
+  background-color: #bdbdbd!important;
   color:#FFFFFF!important;
 }
-.tabs .tab a {
+.tabs_head .tab a {
   color: #efebe9;
 }
-.tabs .indicator{
+.tabs_head .indicator{
   background-color:#FFFFFF!important;
+}
+.tabs .indicator{
+  background-color:#<?=$color1?>!important;
 }
 body {
     display: flex;

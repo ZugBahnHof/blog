@@ -66,12 +66,13 @@ switch ( $logged_in ) {
 		$('.materialboxed').materialbox();
 		$('.tooltipped').tooltip();
 		$('.modal').modal();
+		$('.tabs_js').tabs();
 		<?= $toast?>
 	});
 	</script>
 
 </head>
-<body class="<?php echo $site_color?>">
+<body class="">
 	<header>
 		<div class="navbar-fixed">
 			<nav class="nav-extended grey lighten-2">
@@ -84,13 +85,17 @@ switch ( $logged_in ) {
 					</ul>
 				</div>
 				<div class="nav-content container hide-on-med-and-down">
-					<ul class="tabs tabs-transparent">
-						<li class="tab"><a href="index.php" class="black-text <?php echo $a1;?>">Start</a></li>
+					<ul class="tabs tabs_head tabs-transparent">
+						<li class="tab tab_head"><a href="index.php" class="black-text <?php echo $a1;?>">Start</a></li>
 						<?php if($logged_in==true){?>
-						<li class="tab"><a href=".php" class="black-text <?php echo $a2;?>">Blog</a></li>
-						<li class="tab"><a href=".php" class="black-text <?php echo $a3;?>">Bearbeiten</a></li>
-						<li class="tab"><a href=".php" class="black-text <?php echo $a4;?>">Eintrag hinzufügen</a></li><?php } ?>
-						<li class="tab right"><a href="<?= $logging_link ?>" class="black-text <?php echo $a0;?>"><?= $logging_text ?></a></li>
+							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a2;?>">Blog</a></li>
+							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a3;?>">Bearbeiten</a></li>
+							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a4;?>">Eintrag hinzufügen</a></li>
+							<li class="tab tab_head right"><a href="settings.php" class="black-text <?php echo $a00;?>">Einstellungen</a></li>
+						<?php } else { ?>
+							<li class="tab tab_head right"><a href="register.php" class="black-text <?php echo $a00;?>">Registrieren</a></li>
+						<?php }?>
+						<li class="tab tab_head right"><a href="<?= $logging_link ?>" class="black-text <?php echo $a0;?>"><?= $logging_text ?></a></li>
 					</ul>
 				</div>
 			</nav>
@@ -98,9 +103,9 @@ switch ( $logged_in ) {
 
 		<ul class="sidenav" id="mobile-demo">
 			<li><a href="index.php" class="<?php echo $a1;?>"><?php echo $r1;?>Start</a></li>
-			<li><a href="ueber_uns.php" class="<?php echo $a2;?>"><?php echo $r2;?>Blog</a></li>
-			<li><a href="termine.php" class="<?php echo $a3;?>"><?php echo $r3;?>Bearbeiten</a></li>
-			<li><a href="angebote.php" class="<?php echo $a4;?>"><?php echo $r4;?>Eintrag hinzufügen</a></li>
+			<li><a href="u.php" class="<?php echo $a2;?>"><?php echo $r2;?>Blog</a></li>
+			<li><a href="t.php" class="<?php echo $a3;?>"><?php echo $r3;?>Bearbeiten</a></li>
+			<li><a href="a.php" class="<?php echo $a4;?>"><?php echo $r4;?>Eintrag hinzufügen</a></li>
 		</ul>
 	</header>
 	<main class="container">

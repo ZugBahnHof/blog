@@ -2,9 +2,9 @@
 $site_title = "Index";
 $a1="active";
 $r1="&raquo;";
-$site_color = "red darken-4";
-$site_color_text = "red-text text-darken-4";
-$site_color_html = "#b71c1c";
+$site_color = "red accent-4";
+$site_color_text = "red-text text-accent-4";
+$site_color_html = "#d50000";
 include 'inc/header.inc.php';
 ?>
 <h1>Titel</h1>

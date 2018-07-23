@@ -7,6 +7,11 @@ require_once( "inc/functions.inc.php" );
 //Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
 $user = check_user();
 
+$a00="active";
+$r00="&raquo;";
+$site_color = "cyan";
+$site_color_text = "cyan-text";
+$site_color_html = "#00bcd4";
 $site_description = "Einstellungen - ";
 include "inc/header.inc.php";
 
@@ -75,7 +80,7 @@ $user = check_user();
 ?>
 
 
-<h1 class="<?php echo $site_color_accent_text; ?>">Einstellungen</h1>
+<h1 class="<?php echo $site_color_text; ?>">Einstellungen</h1>
 
 <?php
 if ( isset( $success_msg ) && ! empty( $success_msg ) ):
@@ -101,7 +106,7 @@ endif;
 
 <div class="row">
     <div class="col s12">
-        <ul class="tabs <?php echo $site_color . "-text"; ?>">
+        <ul class="tabs tabs_js <?php echo $site_color . "-text"; ?>">
             <li class="tab col s4"><a class="<?php echo $site_color . "-text"; ?> active" href="#data">Persönliche
                     Daten</a></li>
             <li class="tab col s4"><a class="<?php echo $site_color . "-text"; ?>" href="#email">E-Mail</a></li>
@@ -134,7 +139,7 @@ endif;
             </div>
 
             <div class=" col s12">
-                <button type="submit" class="<?php echo $site_color_accent; ?> btn btn-primary">Speichern</button>
+                <button type="submit" class="<?php echo $site_color; ?> btn btn-primary">Speichern</button>
             </div>
         </form>
     </div>
@@ -162,7 +167,7 @@ endif;
             </div>
 
             <div class=" col s12">
-                <button type="submit" class="<?php echo $site_color_accent; ?> btn btn-primary">Speichern</button>
+                <button type="submit" class="<?php echo $site_color; ?> btn btn-primary">Speichern</button>
             </div>
         </form>
     </div>
@@ -190,7 +195,7 @@ endif;
 
             <div class="form-group">
                 <div class="col s12">
-                    <button type="submit" class="<?php echo $site_color_accent; ?> btn btn-primary">Speichern</button>
+                    <button type="submit" class="<?php echo $site_color; ?> btn btn-primary">Speichern</button>
                 </div>
         </form>
     </div>

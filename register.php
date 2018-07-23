@@ -3,11 +3,16 @@ session_start();
 require_once( "inc/config.inc.php" );
 require_once( "inc/functions.inc.php" );
 
+$a00="active";
+$r00="&raquo;";
+$site_color = "cyan";
+$site_color_text = "cyan-text";
+$site_color_html = "#00bcd4";
 $site_title = "Registrierung";
 include( "inc/header.inc.php" )
 
 ?>
-<h1 class="<?php echo $site_color_accent_text; ?>">Registrierung</h1>
+<h1 class="<?php echo $site_color_text; ?>">Registrierung</h1>
 <?php
 $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden soll
 
@@ -109,7 +114,7 @@ if ( $showFormular ) {
                        class="form-control" required>
             </div>
 
-            <button type="submit" class="<?php echo $site_color_accent; ?> btn waves-effect waves-light col s12 m6 l3">
+            <button type="submit" class="<?php echo $site_color; ?> btn waves-effect waves-light col s12 m6 l3">
                 Registrieren<i class="material-icons right">send</i></button>
         </form>
     </div>
