@@ -22,3 +22,13 @@ CREATE TABLE `securitytokens` (
   `securitytoken` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE articles (
+`id` INT(10) unsigned NOT NULL AUTO_INCREMENT,
+`title` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
+`description` TEXT COLLATE utf8_unicode_ci NOT NULL,
+`text` MEDIUMTEXT COLLATE utf8_unicode_ci NOT NULL,
+`images` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
+`date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+ PRIMARY KEY (`id`), UNIQUE (`title`)
+);
