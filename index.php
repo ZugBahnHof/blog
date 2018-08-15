@@ -7,7 +7,7 @@ $site_color_text = "red-text text-accent-4";
 $site_color_html = "#d50000";
 include 'inc/header.inc.php';
 ?>
-<h1>Titel</h1>
+<h1 class="<?php echo $site_color_text; ?>">Titel</h1>
 <?php
 include 'inc/footer.inc.php';
  ?>
