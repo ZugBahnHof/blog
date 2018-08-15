@@ -29,6 +29,6 @@ CREATE TABLE articles (
 `description` TEXT COLLATE utf8_unicode_ci NOT NULL,
 `text` MEDIUMTEXT COLLATE utf8_unicode_ci NOT NULL,
 `images` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
-`date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+`date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
  PRIMARY KEY (`id`), UNIQUE (`title`)
 );
