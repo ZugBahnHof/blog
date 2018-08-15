@@ -90,7 +90,7 @@ switch ( $logged_in ) {
 						<?php if($logged_in==true){?>
 							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a2;?>">Blog</a></li>
 							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a3;?>">Bearbeiten</a></li>
-							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a4;?>">Eintrag hinzufügen</a></li>
+							<li class="tab tab_head"><a href="add_article.php" class="black-text <?php echo $a4;?>">Eintrag hinzufügen</a></li>
 							<li class="tab tab_head right"><a href="settings.php" class="black-text <?php echo $a00;?>">Einstellungen</a></li>
 						<?php } else { ?>
 							<li class="tab tab_head right"><a href="register.php" class="black-text <?php echo $a00;?>">Registrieren</a></li>
