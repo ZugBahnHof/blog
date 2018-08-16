@@ -67,6 +67,7 @@ switch ( $logged_in ) {
 		$('.tooltipped').tooltip();
 		$('.modal').modal();
 		$('.tabs_js').tabs();
+		$('.collapsible').collapsible();
 		<?= $toast?>
 	});
 	</script>
@@ -88,7 +89,7 @@ switch ( $logged_in ) {
 					<ul class="tabs tabs_head tabs-transparent">
 						<li class="tab tab_head"><a href="index.php" class="black-text <?php echo $a1;?>">Start</a></li>
 						<?php if($logged_in==true){?>
-							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a2;?>">Blog</a></li>
+							<li class="tab tab_head"><a href="view.php" class="black-text <?php echo $a2;?>">Blog</a></li>
 							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a3;?>">Bearbeiten</a></li>
 							<li class="tab tab_head"><a href="add_article.php" class="black-text <?php echo $a4;?>">Eintrag hinzufügen</a></li>
 							<li class="tab tab_head right"><a href="settings.php" class="black-text <?php echo $a00;?>">Einstellungen</a></li>
@@ -103,9 +104,9 @@ switch ( $logged_in ) {
 
 		<ul class="sidenav" id="mobile-demo">
 			<li><a href="index.php" class="<?php echo $a1;?>"><?php echo $r1;?>Start</a></li>
-			<li><a href="u.php" class="<?php echo $a2;?>"><?php echo $r2;?>Blog</a></li>
+			<li><a href="view.php" class="<?php echo $a2;?>"><?php echo $r2;?>Blog</a></li>
 			<li><a href="t.php" class="<?php echo $a3;?>"><?php echo $r3;?>Bearbeiten</a></li>
-			<li><a href="a.php" class="<?php echo $a4;?>"><?php echo $r4;?>Eintrag hinzufügen</a></li>
+			<li><a href="add_article.php" class="<?php echo $a4;?>"><?php echo $r4;?>Eintrag hinzufügen</a></li>
 		</ul>
 	</header>
 	<main class="container">
