@@ -1,4 +1,9 @@
 <?php
+session_start();
+require_once( "inc/config.inc.php" );
+require_once( "inc/functions.inc.php" );
+$user = check_user();
+
 $site_title = "Index";
 $a4="active";
 $r4="&raquo;";
