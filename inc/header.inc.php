@@ -68,6 +68,7 @@ switch ( $logged_in ) {
 		$('.modal').modal();
 		$('.tabs_js').tabs();
 		$('.collapsible').collapsible();
+		$('select').formSelect();
 		<?= $toast?>
 	});
 	</script>

@@ -3,6 +3,7 @@ session_start();
 require_once( "inc/config.inc.php" );
 require_once( "inc/functions.inc.php" );
 $user = check_user();
+$userid = $user['id'];
 
 $site_title = "Index";
 $a4="active";
@@ -17,10 +18,25 @@ include 'inc/header.inc.php';
 <div class="row">
    <form class="col s12" action="upload.php" method="post">
      <div class="row">
-       <div class="input-field col s12 l6">
+       <div class="input-field col s12 m6">
          <i class="material-icons prefix">edit</i>
          <input id="title" name="title" type="text" class="validate" required>
          <label for="title">Titel</label>
+       </div>
+       <div class="input-field col s12 m6">
+         <select>
+           <option value="" disabled selected>Name des Blogs</option>
+           <?php
+              $sql = "SELECT * FROM `blogs` WHERE `owner-id` = $userid";
+              foreach ($pdo->query($sql) as $result) {
+                $blog_id = $result['blog-id'];
+                $blog_title = $result['title'];
+                $owner_id = $result['owner-id'];
+                echo '<option value="'.$blog_id.'">'.$blog_title.'</option>';
+              }
+            ?>
+         </select>
+         <label>Name des Blogs</label>
        </div>
      </div>
      <div class="row">
