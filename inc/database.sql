@@ -30,13 +30,13 @@ CREATE TABLE articles (
 `text` MEDIUMTEXT COLLATE utf8_unicode_ci NOT NULL,
 `images` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
 `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-`blog-id` int(10) unsigned NOT NULL,
+`blog_id` int(10) unsigned NOT NULL,
  PRIMARY KEY (`id`), UNIQUE (`title`)
 );
 
 CREATE TABLE IF NOT EXISTS `blogs` (
-  `blog-id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `blog_id` INT(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
-  `owner-id` int(10) unsigned NOT NULL,
+  `owner_id` INT(10) unsigned NOT NULL,
   PRIMARY KEY (`blog-id`), UNIQUE (`blog-id`)
 );

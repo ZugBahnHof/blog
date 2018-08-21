@@ -5,6 +5,15 @@ require_once( "inc/functions.inc.php" );
 $user = check_user();
 $userid = $user['id'];
 
+require_once 'inc/config.inc.php';
+if(isset($_POST['title'])){
+  $blog_title = $_POST['title'];
+  $blog_owner = $_POST['owner'];
+  $statement = $pdo->prepare("INSERT INTO blogs (blog_id, title, owner_id) VALUES (NULL, :title, :owner_id)");
+  $statement->execute(array('title' => $blog_title, 'owner_id' => $blog_owner));
+  header("Location:index.php?msg=Blog+hinzugefügt!");
+}
+
 $site_title = "Index";
 $a5="active";
 $r5="&raquo;";
@@ -24,7 +33,7 @@ include 'inc/header.inc.php';
          <label for="title">Titel</label>
        </div>
      </div>
-     <input type="hidden" name="owner" value="$userid">
+     <input type="hidden" name="owner" id="owner" value="<?=$userid?>">
      <div class="row">
        <button class="<?=$site_color?> btn waves-effect waves-light col s12 m6 l3" type="submit">Submit
          <i class="material-icons right">send</i>

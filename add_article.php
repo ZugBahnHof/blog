@@ -27,11 +27,11 @@ include 'inc/header.inc.php';
          <select>
            <option value="" disabled selected>Name des Blogs</option>
            <?php
-              $sql = "SELECT * FROM `blogs` WHERE `owner-id` = $userid";
+              $sql = "SELECT * FROM `blogs` WHERE `owner_id` = $userid";
               foreach ($pdo->query($sql) as $result) {
-                $blog_id = $result['blog-id'];
+                $blog_id = $result['blog_id'];
                 $blog_title = $result['title'];
-                $owner_id = $result['owner-id'];
+                $owner_id = $result['owner_id'];
                 echo '<option value="'.$blog_id.'">'.$blog_title.'</option>';
               }
             ?>
