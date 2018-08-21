@@ -89,8 +89,8 @@ switch ( $logged_in ) {
 				<div class="nav-content container hide-on-med-and-down">
 					<ul class="tabs tabs_head tabs-transparent">
 						<li class="tab tab_head"><a href="index.php" class="black-text <?=$a1?>">Start</a></li>
-						<?php if($logged_in==true){?>
 							<li class="tab tab_head"><a href="blog.php" class="black-text <?=$a2?>">Blog ansehen</a></li>
+							<?php if($logged_in==true){?>
 							<li class="tab tab_head"><a href=".php" class="black-text <?=$a3?>">Bearbeiten</a></li>
 							<li class="tab tab_head"><a href="add_article.php" class="black-text <?=$a4?>">Eintrag hinzufügen</a></li>
 							<li class="tab tab_head"><a href="add_blog.php" class="black-text <?= $a5?>">Blog erstellen</a></li>
@@ -106,14 +106,15 @@ switch ( $logged_in ) {
 
 		<ul class="sidenav" id="mobile-demo">
 			<li><a href="index.php" class="<?=$r1?>">Start</a></li>
-			<?php if($logged_in==true){?>
 				<li><a href="blog.php" class="<?=$r2?>">"Blog ansehen</a></li>
+				<?php if($logged_in==true){?>
 				<li><a href="t.php" class="<?=$r3?>">Bearbeiten</a></li>
 				<li><a href="add_article.php" class="<?=$r4?>">Eintrag hinzufügen</a></li>
 				<li><a href="add_blog.php" class="<?=$r5?>">Blog erstellen</a></li>
-      <div class="divider"></div>
+      	<li><div class="divider"></div></li>
 				<li><a href="settings.php" class="<?=$r00;?>">Einstellungen</a></li>
 			<?php } else { ?>
+				<li><div class="divider"></div></li>
 				<li><a href="register.php" class="<?=$r00?>">Registrieren</a></li>
 			<?php } ?>
 			<li><a href="<?= $logging_link ?>" class="<?=$r0?>"><?= $logging_text ?></a></li>
