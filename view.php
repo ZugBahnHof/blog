@@ -1,4 +1,11 @@
 <?php
+if (!isset($_GET['bid'])) {
+    header("Location:index.php?msg=Error+404+–+Seite+nicht+gefunden");
+}
+if (isset($_GET['bid'])) {
+    $b_id = $_GET['bid'];
+    echo $b_id;
+}
 $site_title = "Blog";
 $a2="active";
 $r2="&raquo;";
@@ -10,7 +17,7 @@ include 'inc/header.inc.php';
 <h1 class="<?php echo $site_color_text; ?>">Blog: <i>*Hier Titel einfügen*</i> </h1>
 <ul class="collapsible">
 <?php
-$sql = "SELECT * FROM articles ORDER BY date DESC";
+$sql = "SELECT * FROM articles WHERE blog_id = $b_id ORDER BY date DESC";
 foreach ($pdo->query($sql) as $data) {
     $title = $data['title'];
     $description = $data['description'];
