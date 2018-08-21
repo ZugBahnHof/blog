@@ -4,7 +4,6 @@ if (!isset($_GET['bid'])) {
 }
 if (isset($_GET['bid'])) {
     $b_id = $_GET['bid'];
-    echo $b_id;
 }
 $site_title = "Blog";
 $a2="active";
