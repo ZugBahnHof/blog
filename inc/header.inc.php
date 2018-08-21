@@ -90,7 +90,7 @@ switch ( $logged_in ) {
 					<ul class="tabs tabs_head tabs-transparent">
 						<li class="tab tab_head"><a href="index.php" class="black-text <?php echo $a1;?>">Start</a></li>
 						<?php if($logged_in==true){?>
-							<li class="tab tab_head"><a href="view.php" class="black-text <?php echo $a2;?>">Blog</a></li>
+							<li class="tab tab_head"><a href="blog.php" class="black-text <?php echo $a2;?>">Blog ansehen</a></li>
 							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a3;?>">Bearbeiten</a></li>
 							<li class="tab tab_head"><a href="add_article.php" class="black-text <?php echo $a4;?>">Eintrag hinzufügen</a></li>
 							<li class="tab tab_head"><a href="add_blog.php" class="black-text <?php echo $a5;?>">Blog erstellen</a></li>
