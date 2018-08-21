@@ -93,6 +93,7 @@ switch ( $logged_in ) {
 							<li class="tab tab_head"><a href="view.php" class="black-text <?php echo $a2;?>">Blog</a></li>
 							<li class="tab tab_head"><a href=".php" class="black-text <?php echo $a3;?>">Bearbeiten</a></li>
 							<li class="tab tab_head"><a href="add_article.php" class="black-text <?php echo $a4;?>">Eintrag hinzufügen</a></li>
+							<li class="tab tab_head"><a href="add_blog.php" class="black-text <?php echo $a5;?>">Blog erstellen</a></li>
 							<li class="tab tab_head right"><a href="settings.php" class="black-text <?php echo $a00;?>">Einstellungen</a></li>
 						<?php } else { ?>
 							<li class="tab tab_head right"><a href="register.php" class="black-text <?php echo $a00;?>">Registrieren</a></li>
@@ -108,6 +109,8 @@ switch ( $logged_in ) {
 			<li><a href="view.php" class="<?php echo $a2;?>"><?php echo $r2;?>Blog</a></li>
 			<li><a href="t.php" class="<?php echo $a3;?>"><?php echo $r3;?>Bearbeiten</a></li>
 			<li><a href="add_article.php" class="<?php echo $a4;?>"><?php echo $r4;?>Eintrag hinzufügen</a></li>
+			<li><a href="add_blog.php" class="<?php echo $a5;?>"><?php echo $r5;?>Eintrag hinzufügen</a></li>
+			<div class="divider"></div>
 		</ul>
 	</header>
 	<main class="container">
