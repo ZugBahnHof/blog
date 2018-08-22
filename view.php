@@ -12,8 +12,13 @@ $site_color = "orange";
 $site_color_text = "orange-text";
 $site_color_html = "#ff9800";
 include 'inc/header.inc.php';
+
+$sql = "SELECT * FROM blogs";
+$blogs_list = $pdo->query($sql)->fetch();
+$blog_title_list = $blogs_list['title'];
+$owner_id_list = $blogs_list['owner_id'];
 ?>
-<h1 class="<?php echo $site_color_text; ?>">Blog: <i>*Hier Titel einfügen*</i> </h1>
+<h1 class="<?php echo $site_color_text; ?>">Blog: <i><?=$blog_title_list?></i> </h1>
 <ul class="collapsible">
 <?php
 $sql = "SELECT * FROM articles WHERE blog_id = $b_id ORDER BY date DESC";
