@@ -13,6 +13,11 @@ $site_color_text = "orange-text";
 $site_color_html = "#ff9800";
 include 'inc/header.inc.php';
 
+if ($logged_in == TRUE) {
+  $user = check_user();
+  $userid = $user['id'];
+}
+
 $sql = "SELECT * FROM blogs";
 $blogs_list = $pdo->query($sql)->fetch();
 $blog_title_list = $blogs_list['title'];
@@ -28,6 +33,10 @@ foreach ($pdo->query($sql) as $data) {
     $text = $data['text'];
     $date = new DateTime($data['date']);
     $date_formatted = $date->format('d.m.y H:i:s')."<br />";
+    if ($owner_id_list == $userid) {
+      $edit_button = '
+        <br><a class="waves-effect waves-orange orange btn-small right" href="edit_blog.php?id='.$b_id.'"><i class="material-icons">edit</i></a>';
+    }
     echo '
     <li>
       <div class="collapsible-header">
@@ -37,7 +46,7 @@ foreach ($pdo->query($sql) as $data) {
           <div class="col s6 m4 l2"><em>geschrieben am:<br>'.$date_formatted.'</em></div>
         </div>
       </div>
-      <div class="collapsible-body"><span>'.$text.'</span></div>
+      <div class="collapsible-body"><span>'.$text.'</span>'.$edit_button.'</div>
     </li>';
 }
  ?>
