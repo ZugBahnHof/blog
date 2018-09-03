@@ -24,7 +24,7 @@ include 'inc/header.inc.php';
          <label for="title">Titel</label>
        </div>
        <div class="input-field col s12 m6">
-         <select>
+         <select name="blog_id">
            <option value="" disabled selected>Name des Blogs</option>
            <?php
               $sql = "SELECT * FROM `blogs` WHERE `owner_id` = $userid";
