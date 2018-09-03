@@ -18,7 +18,7 @@ if ($logged_in == TRUE) {
   $userid = $user['id'];
 }
 
-$sql = "SELECT * FROM blogs";
+$sql = "SELECT * FROM blogs WHERE blog_id = $b_id";
 $blogs_list = $pdo->query($sql)->fetch();
 $blog_title_list = $blogs_list['title'];
 $owner_id_list = $blogs_list['owner_id'];
