@@ -91,7 +91,6 @@ switch ( $logged_in ) {
 						<li class="tab tab_head"><a href="index.php" class="black-text <?=$a1?>">Start</a></li>
 							<li class="tab tab_head"><a href="blog.php" class="black-text <?=$a2?>">Blog ansehen</a></li>
 							<?php if($logged_in==true){?>
-							<li class="tab tab_head"><a href=".php" class="black-text <?=$a3?>">Bearbeiten</a></li>
 							<li class="tab tab_head"><a href="add_article.php" class="black-text <?=$a4?>">Eintrag hinzufügen</a></li>
 							<li class="tab tab_head"><a href="add_blog.php" class="black-text <?= $a5?>">Blog erstellen</a></li>
 							<li class="tab tab_head right"><a href="settings.php" class="black-text <?=$a00?>">Einstellungen</a></li>
@@ -108,7 +107,6 @@ switch ( $logged_in ) {
 			<li><a href="index.php" class="<?=$r1?>">Start</a></li>
 				<li><a href="blog.php" class="<?=$r2?>">"Blog ansehen</a></li>
 				<?php if($logged_in==true){?>
-				<li><a href="t.php" class="<?=$r3?>">Bearbeiten</a></li>
 				<li><a href="add_article.php" class="<?=$r4?>">Eintrag hinzufügen</a></li>
 				<li><a href="add_blog.php" class="<?=$r5?>">Blog erstellen</a></li>
       	<li><div class="divider"></div></li>

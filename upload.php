@@ -5,7 +5,8 @@ if(isset($_POST['title'])){
   $data['title'] = $_POST['title'];
   $data['description'] = $_POST['description'];
   $data['text'] = $_POST['text'];
-  $statement = $pdo->prepare("INSERT INTO articles (title, description, text) VALUES (:title, :description, :text)");
+  $data['bid'] = $_POST['blog_id'];
+  $statement = $pdo->prepare("INSERT INTO articles (title, description, text, blog_id) VALUES (:title, :description, :text, :bid)");
   $statement->execute($data);
   header("Location:index.php?msg=1");
 }
