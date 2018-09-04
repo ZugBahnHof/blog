@@ -33,9 +33,10 @@ foreach ($pdo->query($sql) as $data) {
     $text = $data['text'];
     $date = new DateTime($data['date']);
     $date_formatted = $date->format('d.m.y H:i:s')."<br />";
+    $id_of_the_article = $data['id'];
     if ($owner_id_list == $userid) {
       $edit_button = '
-        <br><a class="waves-effect waves-orange orange btn-small right" href="edit_blog.php?id='.$b_id.'"><i class="material-icons">edit</i></a>';
+        <br><a class="waves-effect waves-orange orange btn-small right" href="edit_blog.php?id='.$id_of_the_article.'"><i class="material-icons">edit</i></a>';
     }
     echo '
     <li>
