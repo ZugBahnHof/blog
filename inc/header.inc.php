@@ -66,6 +66,7 @@ switch ( $logged_in ) {
 		$('.materialboxed').materialbox();
 		$('.tooltipped').tooltip();
 		$('.modal').modal();
+		$('.tabs').tabs();
 		$('.tabs_js').tabs();
 		$('.collapsible').collapsible();
 		$('select').formSelect();
@@ -94,7 +95,7 @@ switch ( $logged_in ) {
 				</div>
 				<div class="nav-content container hide-on-med-and-down">
 					<ul class="tabs tabs_head tabs-transparent">
-							<li class="tab tab_head"><a href="index.php" class="black-text <?=$a1?>">Start</a></li>
+							<li class="tab tab_head"><a href="index.php#index" class="black-text <?=$a1?>">Start</a></li>
 							<?php
 							$sql = "SELECT * FROM blogs";
 							foreach ($pdo->query($sql) as $blogs_list) {
@@ -102,7 +103,7 @@ switch ( $logged_in ) {
 							    $blog_id_list = $blogs_list['blog_id'];
 							    echo'
 							    <li class="tab tab_head">
-							      <a href="view.php?bid='.$blog_id_list.'" class="black-text <?=$a2?>">'.$blog_title_list.'</a>
+							      <a href="#'.$blog_id_list.'" class="black-text <?=$a2?>">'.$blog_title_list.'</a>
 							    </li>
 							    ';
 							  }
