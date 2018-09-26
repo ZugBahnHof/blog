@@ -1,17 +1,14 @@
 <?php
-if (!isset($_GET['bid'])) {
-    header("Location:index.php?msg=Error+404+–+Seite+nicht+gefunden");
-}
-if (isset($_GET['bid'])) {
-    $b_id = $_GET['bid'];
-}
+session_start();
+require_once( "inc/config.inc.php" );
+require_once( "inc/functions.inc.php" );
 $site_title = "Blog";
 $a2="active";
 $r2="&raquo;";
 $site_color = "orange";
 $site_color_text = "orange-text";
 $site_color_html = "#ff9800";
-include 'inc/header.inc.php';
+$answer = '';
 
 if ($logged_in == TRUE) {
   $user = check_user();
@@ -22,10 +19,9 @@ $sql = "SELECT * FROM blogs WHERE blog_id = $b_id";
 $blogs_list = $pdo->query($sql)->fetch();
 $blog_title_list = $blogs_list['title'];
 $owner_id_list = $blogs_list['owner_id'];
-?>
-<h1 class="<?php echo $site_color_text; ?>">Blog: <i><?=$blog_title_list?></i> </h1>
-<ul class="collapsible">
-<?php
+
+$answer .= '<h1 class="'.$site_color_text.'">Blog: <i>'.$blog_title_list.'</i> </h1>
+<ul class="collapsible">';
 $sql = "SELECT * FROM articles WHERE blog_id = $b_id ORDER BY date DESC";
 foreach ($pdo->query($sql) as $data) {
     $title = $data['title'];
@@ -38,7 +34,7 @@ foreach ($pdo->query($sql) as $data) {
       $edit_button = '
         <br><a class="waves-effect waves-orange orange btn-small right" href="edit_blog.php?id='.$id_of_the_article.'"><i class="material-icons">edit</i></a>';
     }
-    echo '
+    $answer .= '
     <li>
       <div class="collapsible-header">
         <i class="material-icons">filter_drama</i>
@@ -50,8 +46,6 @@ foreach ($pdo->query($sql) as $data) {
       <div class="collapsible-body"><span>'.$text.'</span>'.$edit_button.'</div>
     </li>';
 }
- ?>
-</ul>
-<?php
-include 'inc/footer.inc.php';
+$answer .= '</ul>';
+echo $answer;
  ?>
