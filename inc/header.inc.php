@@ -28,11 +28,11 @@ switch ( $logged_in ) {
 		$image_lock   = "lock_open";
 		break;
 
-	default:
+	default:/*
 		$logging_link = "login.php";
 		$logging_imag = "check";
 		$logging_text = "Login";
-		$image_lock   = "lock";
+		$image_lock   = "lock";*/
 		break;
 }
 ?>
@@ -84,20 +84,29 @@ switch ( $logged_in ) {
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="" class="black-text">Impressum</a></li>
 						<li><a href="" class="black-text">Kontakt</a></li>
+						<?php if($logged_in==true){?>
+						<li><a href="add_article.php" class="<?=$site_color_text?>">Eintrag hinzufügen</a></li>
+						<li><a href="add_blog.php" class="<?=$site_color_text?>">Blog erstellen</a></li>
+						<li><a href="settings.php" class="<?=$site_color_text?>">Einstellungen</a></li>
+					<?php } ?>
+					<li><a href="<?= $logging_link ?>" class="<?=$site_color_text?>"><?= $logging_text ?></a></li>
 					</ul>
 				</div>
 				<div class="nav-content container hide-on-med-and-down">
 					<ul class="tabs tabs_head tabs-transparent">
-						<li class="tab tab_head"><a href="index.php" class="black-text <?=$a1?>">Start</a></li>
-							<li class="tab tab_head"><a href="blog.php" class="black-text <?=$a2?>">Blog ansehen</a></li>
-							<?php if($logged_in==true){?>
-							<li class="tab tab_head"><a href="add_article.php" class="black-text <?=$a4?>">Eintrag hinzufügen</a></li>
-							<li class="tab tab_head"><a href="add_blog.php" class="black-text <?= $a5?>">Blog erstellen</a></li>
-							<li class="tab tab_head right"><a href="settings.php" class="black-text <?=$a00?>">Einstellungen</a></li>
-						<?php } else { ?>
-							<li class="tab tab_head right"><a href="register.php" class="black-text <?=$a00?>">Registrieren</a></li>
-						<?php }?>
-						<li class="tab tab_head right"><a href="<?= $logging_link ?>" class="black-text <?=$a0?>"><?= $logging_text ?></a></li>
+							<li class="tab tab_head"><a href="index.php" class="black-text <?=$a1?>">Start</a></li>
+							<?php
+							$sql = "SELECT * FROM blogs";
+							foreach ($pdo->query($sql) as $blogs_list) {
+							    $blog_title_list = $blogs_list['title'];
+							    $blog_id_list = $blogs_list['blog_id'];
+							    echo'
+							    <li class="tab tab_head">
+							      <a href="view.php?bid='.$blog_id_list.'" class="black-text <?=$a2?>">'.$blog_title_list.'</a>
+							    </li>
+							    ';
+							  }
+							?>
 					</ul>
 				</div>
 			</nav>
@@ -111,9 +120,6 @@ switch ( $logged_in ) {
 				<li><a href="add_blog.php" class="<?=$r5?>">Blog erstellen</a></li>
       	<li><div class="divider"></div></li>
 				<li><a href="settings.php" class="<?=$r00;?>">Einstellungen</a></li>
-			<?php } else { ?>
-				<li><div class="divider"></div></li>
-				<li><a href="register.php" class="<?=$r00?>">Registrieren</a></li>
 			<?php } ?>
 			<li><a href="<?= $logging_link ?>" class="<?=$r0?>"><?= $logging_text ?></a></li>
 		</ul>
