@@ -85,10 +85,9 @@ $user = check_user();
 <?php
 if ( isset( $success_msg ) && ! empty( $success_msg ) ):
 	?>
-    <div class="alert alert-success">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-		<?php echo $success_msg; ?>
-    </div>
+	<script type="text/javascript">
+		M.toast({html: '<?=$success_msg?>'})
+	</script>
 <?php
 endif;
 ?>
@@ -96,10 +95,9 @@ endif;
 <?php
 if ( isset( $error_msg ) && ! empty( $error_msg ) ):
 	?>
-    <div class="alert alert-danger">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-		<?php echo $error_msg; ?>
-    </div>
+    <script type="text/javascript">
+			M.toast({html: '<?=$error_msg?>'})
+    </script>
 <?php
 endif;
 ?>
